@@ -1,0 +1,127 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "guessing day",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "guessingIntent",
+                    "slots": [
+                        {
+                            "name": "day",
+                            "type": "AMAZON.Ordinal",
+                            "samples": [
+                                "{month} {day} {year}",
+                                "{day} {month} {year}"
+                            ]
+                        },
+                        {
+                            "name": "month",
+                            "type": "AMAZON.Month",
+                            "samples": [
+                                "{month} {day} {year}",
+                                "{day} {month} {year}"
+                            ]
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "samples": [
+                                "{month} {day} {year}",
+                                "{day} {month} {year}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{month} {day} {year}",
+                        "{day} {month} {year}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "guessingIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "day",
+                            "type": "AMAZON.Ordinal",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1566179243586.342376124197"
+                            }
+                        },
+                        {
+                            "name": "month",
+                            "type": "AMAZON.Month",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1566179243586.366517114082"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1566179243586.174469180176"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1566179243586.342376124197",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "give the date"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1566179243586.366517114082",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "give the date"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1566179243586.174469180176",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "give the date"
+                    }
+                ]
+            }
+        ]
+    }
+}
